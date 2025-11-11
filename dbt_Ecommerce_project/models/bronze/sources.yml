@@ -1,0 +1,151 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data layer - landed from Snowpipe, COPY INTO, and CDC streams"
+    database: omni_retail
+    schema: raw
+    
+    tables:
+      # Streaming data (Snowpipe - JSON events)
+      - name: olist_orders_dataset
+        description: "Raw orders from e-commerce platform"
+        columns:
+          - name: order_id
+            description: "Unique order identifier"
+          - name: customer_id
+            description: "Customer who placed the order"
+          - name: order_status
+            description: "Current order status"
+          - name: order_purchase_timestamp
+            description: "When the order was placed"
+          - name: order_approved_at
+            description: "When the order was approved"
+          - name: order_delivered_carrier_date
+            description: "When handed to carrier"
+          - name: order_delivered_customer_date
+            description: "When delivered to customer"
+          - name: order_estimated_delivery_date
+            description: "Estimated delivery date"
+      
+      - name: olist_orders_items_dataset
+        description: "Raw order line items"
+        columns:
+          - name: order_id
+            description: "Order identifier"
+          - name: order_item_id
+            description: "Line item sequence number"
+          - name: product_id
+            description: "Product identifier"
+          - name: seller_id
+            description: "Seller/store identifier"
+          - name: shipping_limit_date
+            description: "Shipping deadline"
+          - name: price
+            description: "Product price"
+          - name: freight_value
+            description: "Shipping cost"
+      
+      - name: olist_order_payments_dataset
+        description: "Raw payment events"
+        columns:
+          - name: order_id
+            description: "Order identifier"
+          - name: payment_sequential
+            description: "Payment sequence number"
+          - name: payment_type
+            description: "Payment method (credit_card, boleto, etc.)"
+          - name: payment_installments
+            description: "Number of installments"
+          - name: payment_value
+            description: "Payment amount"
+      
+      # Batch data (COPY INTO - CSV from ERP/CRM)
+      - name: olist_products_dataset
+        description: "Product master data from ERP"
+        columns:
+          - name: product_id
+            description: "Unique product identifier"
+          - name: product_category_name
+            description: "Product category (Portuguese)"
+          - name: product_name_lenght
+            description: "Length of product name"
+          - name: product_description_lenght
+            description: "Length of product description"
+          - name: product_photos_qty
+            description: "Number of product photos"
+          - name: product_weight_g
+            description: "Product weight in grams"
+          - name: product_length_cm
+            description: "Product length in cm"
+          - name: product_height_cm
+            description: "Product height in cm"
+          - name: product_width_cm
+            description: "Product width in cm"
+      
+      - name: olist_sellers_dataset
+        description: "Seller/store master data"
+        columns:
+          - name: seller_id
+            description: "Unique seller/store identifier"
+          - name: seller_zip_code_prefix
+            description: "Store zip code prefix"
+          - name: seller_city
+            description: "Store city"
+          - name: seller_state
+            description: "Store state"
+      
+      - name: olist_customers_dataset
+        description: "Customer master data with CDC"
+        columns:
+          - name: customer_id
+            description: "Unique customer identifier"
+          - name: customer_unique_id
+            description: "Global customer unique ID"
+          - name: customer_zip_code_prefix
+            description: "Customer zip code prefix"
+          - name: customer_city
+            description: "Customer city"
+          - name: customer_state
+            description: "Customer state"
+      
+      - name: olist_order_reviews_dataset
+        description: "Order reviews and feedback"
+        columns:
+          - name: review_id
+            description: "Unique review identifier"
+          - name: order_id
+            description: "Order being reviewed"
+          - name: review_score
+            description: "Review score (1-5)"
+          - name: review_comment_title
+            description: "Review title"
+          - name: review_comment_message
+            description: "Review message"
+          - name: review_creation_date
+            description: "When review was created"
+          - name: review_answer_timestamp
+            description: "When seller responded"
+      
+      - name: olist_geolocation_dataset
+        description: "Postal code to location mapping"
+        columns:
+          - name: geolocation_zip_code_prefix
+            description: "Zip code prefix"
+          - name: geolocation_lat
+            description: "Latitude"
+          - name: geolocation_lng
+            description: "Longitude"
+          - name: geolocation_city
+            description: "City name"
+          - name: geolocation_state
+            description: "State abbreviation"
+      
+      # Seeds (loaded via dbt seed)
+      - name: product_category_name_translation
+        description: "Category name translation (Portuguese to English)"
+        columns:
+          - name: category_name_portuguese
+            description: "Category name in Portuguese"
+          - name: category_name_english
+            description: "Category name in English"

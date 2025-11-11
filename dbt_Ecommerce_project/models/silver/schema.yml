@@ -1,0 +1,214 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Silver layer: Cleaned and transformed orders (transformations pending)"
+    config:
+      tags: ['silver', 'orders', 'transactional']
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Customer who placed the order"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Current order status"
+        tests:
+          - not_null
+      - name: order_purchase_timestamp
+        description: "When the order was placed"
+        tests:
+          - not_null
+      - name: order_estimated_delivery_date
+        description: "Estimated delivery date"
+        tests:
+          - not_null
+
+  - name: stg_order_items
+    description: "Silver layer: Cleaned and transformed order line items (transformations pending)"
+    config:
+      tags: ['silver', 'orders', 'transactional']
+    columns:
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: order_item_id
+        description: "Line item sequence number"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Product identifier"
+        tests:
+          - not_null
+      - name: seller_id
+        description: "Seller/store identifier"
+        tests:
+          - not_null
+      - name: price
+        description: "Product price"
+        tests:
+          - not_null
+      - name: freight_value
+        description: "Shipping cost"
+        tests:
+          - not_null
+      - name: shipping_limit_date
+        description: "Shipping deadline"
+        tests:
+          - not_null
+
+  - name: stg_order_payments
+    description: "Silver layer: Cleaned and transformed payment events (transformations pending)"
+    config:
+      tags: ['silver', 'payments', 'transactional']
+    columns:
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: payment_sequential
+        description: "Payment sequence number"
+        tests:
+          - not_null
+      - name: payment_type
+        description: "Payment method (credit_card, boleto, etc.)"
+        tests:
+          - not_null
+      - name: payment_installments
+        description: "Number of installments"
+        tests:
+          - not_null
+      - name: payment_value
+        description: "Payment amount"
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: "Silver layer: Cleaned and transformed product master data (transformations pending)"
+    config:
+      tags: ['silver', 'products', 'master']
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_sellers
+    description: "Silver layer: Cleaned and transformed seller/store master data (transformations pending)"
+    config:
+      tags: ['silver', 'sellers', 'master']
+    columns:
+      - name: seller_id
+        description: "Unique seller/store identifier"
+        tests:
+          - not_null
+          - unique
+      - name: seller_zip_code_prefix
+        description: "Store zip code prefix"
+        tests:
+          - not_null
+      - name: seller_city
+        description: "Store city"
+        tests:
+          - not_null
+      - name: seller_state
+        description: "Store state"
+        tests:
+          - not_null
+
+  - name: stg_customers
+    description: "Silver layer: Cleaned and transformed customer master data (transformations pending)"
+    config:
+      tags: ['silver', 'customers', 'master']
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        tests:
+          - not_null
+      - name: customer_unique_id
+        description: "Global customer unique ID"
+        tests:
+          - not_null
+          - unique
+      - name: customer_zip_code_prefix
+        description: "Customer zip code prefix"
+        tests:
+          - not_null
+      - name: customer_city
+        description: "Customer city"
+        tests:
+          - not_null
+      - name: customer_state
+        description: "Customer state"
+        tests:
+          - not_null
+
+  - name: stg_order_reviews
+    description: "Silver layer: Cleaned and transformed order reviews (transformations pending)"
+    config:
+      tags: ['silver', 'reviews', 'feedback']
+    columns:
+      - name: review_id
+        description: "Unique review identifier"
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Order being reviewed"
+        tests:
+          - not_null
+      - name: review_score
+        description: "Review score (1-5)"
+        tests:
+          - not_null
+      - name: review_creation_date
+        description: "When review was created"
+        tests:
+          - not_null
+
+  - name: stg_geolocation
+    description: "Silver layer: Cleaned and transformed geolocation lookup (transformations pending)"
+    config:
+      tags: ['silver', 'reference', 'geolocation']
+    columns:
+      - name: geolocation_zip_code_prefix
+        description: "Zip code prefix"
+        tests:
+          - not_null
+      - name: geolocation_lat
+        description: "Latitude"
+        tests:
+          - not_null
+      - name: geolocation_lng
+        description: "Longitude"
+        tests:
+          - not_null
+      - name: geolocation_city
+        description: "City name"
+        tests:
+          - not_null
+      - name: geolocation_state
+        description: "State abbreviation"
+        tests:
+          - not_null
+
+  - name: stg_category_translation
+    description: "Silver layer: Category translation reference (transformations pending)"
+    config:
+      tags: ['silver', 'reference', 'categories']
+    columns:
+      - name: product_category_name
+        description: "Category name in Portuguese"
+        tests:
+          - not_null
+          - unique
+      - name: product_category_name_english
+        description: "Category name in English"
+        tests:
+          - not_null

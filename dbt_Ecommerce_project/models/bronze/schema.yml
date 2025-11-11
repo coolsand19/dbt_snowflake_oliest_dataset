@@ -1,0 +1,104 @@
+version: 2
+
+models:
+  - name: orders
+    description: "Bronze layer view of raw orders - no transformations applied"
+    config:
+      tags: ['bronze', 'streaming', 'snowpipe']
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - not_null
+          - unique
+
+  - name: order_items
+    description: "Bronze layer view of raw order line items - no transformations"
+    config:
+      tags: ['bronze', 'streaming', 'snowpipe']
+    columns:
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+      - name: order_item_id
+        description: "Line item sequence number"
+
+  - name: order_payments
+    description: "Bronze layer view of raw payment events - no transformations"
+    config:
+      tags: ['bronze', 'streaming', 'snowpipe']
+    columns:
+      - name: order_id
+        description: "Order identifier"
+        tests:
+          - not_null
+
+  - name: products
+    description: "Bronze layer view of raw product master data - no transformations"
+    config:
+      tags: ['bronze', 'batch', 'erp']
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests:
+          - not_null
+          - unique
+
+  - name: sellers
+    description: "Bronze layer view of raw seller/store master data - no transformations"
+    config:
+      tags: ['bronze', 'batch', 'erp']
+    columns:
+      - name: seller_id
+        description: "Unique seller/store identifier"
+        tests:
+          - not_null
+          - unique
+
+  - name: customers
+    description: "Bronze layer view of raw customer master data with CDC - no transformations"
+    config:
+      tags: ['bronze', 'batch', 'cdc', 'crm']
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        tests:
+          - not_null
+
+  - name: order_reviews
+    description: "Bronze layer view of raw order reviews - no transformations"
+    config:
+      tags: ['bronze', 'batch', 'feedback']
+    columns:
+      - name: review_id
+        description: "Unique review identifier"
+        tests:
+          - not_null
+      - name: order_id
+        description: "Order being reviewed"
+        tests:
+          - not_null
+
+  - name: geolocation
+    description: "Bronze layer view of raw geolocation lookup - no transformations"
+    config:
+      tags: ['bronze', 'batch', 'reference']
+    columns:
+      - name: geolocation_zip_code_prefix
+        description: "Zip code prefix"
+
+  - name: category_translation
+    description: "Bronze layer view of category translation seed - no transformations"
+    config:
+      tags: ['bronze', 'seed', 'reference']
+    columns:
+      - name: category_name_portuguese
+        description: "Category name in Portuguese"
+        tests:
+          - not_null
+          - unique
+      - name: category_name_english
+        description: "Category name in English"
+        tests:
+          - not_null
