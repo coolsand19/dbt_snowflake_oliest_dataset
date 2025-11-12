@@ -11,3 +11,5 @@
 SELECT 
     *
 FROM {{ ref('geolocation') }}
+
+

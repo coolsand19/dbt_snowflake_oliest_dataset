@@ -1,0 +1,187 @@
+[0m06:23:23  Running with dbt=1.10.13
+[0m06:23:23  Registered adapter: snowflake=1.10.2
+[0m06:23:24  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_Ecommerce_project.gold
+[0m06:23:24  Found 18 models, 5 analyses, 80 data tests, 1 seed, 9 sources, 497 macros
+[0m06:23:24  
+[0m06:23:24  Concurrency: 1 threads (target='dev')
+[0m06:23:24  
+[0m06:23:28  1 of 66 START test not_null_stg_category_translation_product_category_name ..... [RUN]
+[0m06:23:28  1 of 66 PASS not_null_stg_category_translation_product_category_name ........... [[32mPASS[0m in 0.93s]
+[0m06:23:28  2 of 66 START test not_null_stg_category_translation_product_category_name_english  [RUN]
+[0m06:23:29  2 of 66 PASS not_null_stg_category_translation_product_category_name_english ... [[32mPASS[0m in 0.15s]
+[0m06:23:29  3 of 66 START test not_null_stg_customers_customer_city ........................ [RUN]
+[0m06:23:29  3 of 66 PASS not_null_stg_customers_customer_city .............................. [[32mPASS[0m in 0.19s]
+[0m06:23:29  4 of 66 START test not_null_stg_customers_customer_id .......................... [RUN]
+[0m06:23:29  4 of 66 PASS not_null_stg_customers_customer_id ................................ [[32mPASS[0m in 0.15s]
+[0m06:23:29  5 of 66 START test not_null_stg_customers_customer_state ....................... [RUN]
+[0m06:23:29  5 of 66 PASS not_null_stg_customers_customer_state ............................. [[32mPASS[0m in 0.19s]
+[0m06:23:29  6 of 66 START test not_null_stg_customers_customer_unique_id ................... [RUN]
+[0m06:23:29  6 of 66 PASS not_null_stg_customers_customer_unique_id ......................... [[32mPASS[0m in 0.17s]
+[0m06:23:29  7 of 66 START test not_null_stg_customers_customer_zip_code_prefix ............. [RUN]
+[0m06:23:30  7 of 66 PASS not_null_stg_customers_customer_zip_code_prefix ................... [[32mPASS[0m in 0.17s]
+[0m06:23:30  8 of 66 START test not_null_stg_geolocation_geolocation_city ................... [RUN]
+[0m06:23:30  8 of 66 PASS not_null_stg_geolocation_geolocation_city ......................... [[32mPASS[0m in 0.15s]
+[0m06:23:30  9 of 66 START test not_null_stg_geolocation_geolocation_lat .................... [RUN]
+[0m06:23:30  9 of 66 PASS not_null_stg_geolocation_geolocation_lat .......................... [[32mPASS[0m in 0.15s]
+[0m06:23:30  10 of 66 START test not_null_stg_geolocation_geolocation_lng ................... [RUN]
+[0m06:23:30  10 of 66 PASS not_null_stg_geolocation_geolocation_lng ......................... [[32mPASS[0m in 0.14s]
+[0m06:23:30  11 of 66 START test not_null_stg_geolocation_geolocation_state ................. [RUN]
+[0m06:23:30  11 of 66 PASS not_null_stg_geolocation_geolocation_state ....................... [[32mPASS[0m in 0.14s]
+[0m06:23:30  12 of 66 START test not_null_stg_geolocation_geolocation_zip_code_prefix ....... [RUN]
+[0m06:23:30  12 of 66 PASS not_null_stg_geolocation_geolocation_zip_code_prefix ............. [[32mPASS[0m in 0.14s]
+[0m06:23:30  13 of 66 START test not_null_stg_order_items_freight_value ..................... [RUN]
+[0m06:23:30  13 of 66 PASS not_null_stg_order_items_freight_value ........................... [[32mPASS[0m in 0.16s]
+[0m06:23:30  14 of 66 START test not_null_stg_order_items_order_id .......................... [RUN]
+[0m06:23:31  14 of 66 PASS not_null_stg_order_items_order_id ................................ [[32mPASS[0m in 0.15s]
+[0m06:23:31  15 of 66 START test not_null_stg_order_items_order_item_id ..................... [RUN]
+[0m06:23:31  15 of 66 PASS not_null_stg_order_items_order_item_id ........................... [[32mPASS[0m in 0.58s]
+[0m06:23:31  16 of 66 START test not_null_stg_order_items_price ............................. [RUN]
+[0m06:23:31  16 of 66 PASS not_null_stg_order_items_price ................................... [[32mPASS[0m in 0.13s]
+[0m06:23:31  17 of 66 START test not_null_stg_order_items_product_id ........................ [RUN]
+[0m06:23:31  17 of 66 PASS not_null_stg_order_items_product_id .............................. [[32mPASS[0m in 0.13s]
+[0m06:23:31  18 of 66 START test not_null_stg_order_items_seller_id ......................... [RUN]
+[0m06:23:32  18 of 66 PASS not_null_stg_order_items_seller_id ............................... [[32mPASS[0m in 0.17s]
+[0m06:23:32  19 of 66 START test not_null_stg_order_items_shipping_limit_date ............... [RUN]
+[0m06:23:32  19 of 66 PASS not_null_stg_order_items_shipping_limit_date ..................... [[32mPASS[0m in 0.17s]
+[0m06:23:32  20 of 66 START test not_null_stg_order_payments_order_id ....................... [RUN]
+[0m06:23:32  20 of 66 PASS not_null_stg_order_payments_order_id ............................. [[32mPASS[0m in 0.26s]
+[0m06:23:32  21 of 66 START test not_null_stg_order_payments_payment_installments ........... [RUN]
+[0m06:23:32  21 of 66 PASS not_null_stg_order_payments_payment_installments ................. [[32mPASS[0m in 0.20s]
+[0m06:23:32  22 of 66 START test not_null_stg_order_payments_payment_sequential ............. [RUN]
+[0m06:23:32  22 of 66 PASS not_null_stg_order_payments_payment_sequential ................... [[32mPASS[0m in 0.14s]
+[0m06:23:32  23 of 66 START test not_null_stg_order_payments_payment_type ................... [RUN]
+[0m06:23:33  23 of 66 PASS not_null_stg_order_payments_payment_type ......................... [[32mPASS[0m in 0.18s]
+[0m06:23:33  24 of 66 START test not_null_stg_order_payments_payment_value .................. [RUN]
+[0m06:23:33  24 of 66 PASS not_null_stg_order_payments_payment_value ........................ [[32mPASS[0m in 0.17s]
+[0m06:23:33  25 of 66 START test not_null_stg_order_reviews_order_id ........................ [RUN]
+[0m06:23:33  25 of 66 PASS not_null_stg_order_reviews_order_id .............................. [[32mPASS[0m in 0.13s]
+[0m06:23:33  26 of 66 START test not_null_stg_order_reviews_review_creation_date ............ [RUN]
+[0m06:23:33  26 of 66 PASS not_null_stg_order_reviews_review_creation_date .................. [[32mPASS[0m in 0.16s]
+[0m06:23:33  27 of 66 START test not_null_stg_order_reviews_review_id ....................... [RUN]
+[0m06:23:33  27 of 66 PASS not_null_stg_order_reviews_review_id ............................. [[32mPASS[0m in 0.18s]
+[0m06:23:33  28 of 66 START test not_null_stg_order_reviews_review_score .................... [RUN]
+[0m06:23:34  28 of 66 PASS not_null_stg_order_reviews_review_score .......................... [[32mPASS[0m in 0.14s]
+[0m06:23:34  29 of 66 START test not_null_stg_orders_customer_id ............................ [RUN]
+[0m06:23:34  29 of 66 PASS not_null_stg_orders_customer_id .................................. [[32mPASS[0m in 0.14s]
+[0m06:23:34  30 of 66 START test not_null_stg_orders_order_estimated_delivery_date .......... [RUN]
+[0m06:23:34  30 of 66 PASS not_null_stg_orders_order_estimated_delivery_date ................ [[32mPASS[0m in 0.17s]
+[0m06:23:34  31 of 66 START test not_null_stg_orders_order_id ............................... [RUN]
+[0m06:23:34  31 of 66 PASS not_null_stg_orders_order_id ..................................... [[32mPASS[0m in 0.15s]
+[0m06:23:34  32 of 66 START test not_null_stg_orders_order_purchase_timestamp ............... [RUN]
+[0m06:23:34  32 of 66 PASS not_null_stg_orders_order_purchase_timestamp ..................... [[32mPASS[0m in 0.16s]
+[0m06:23:34  33 of 66 START test not_null_stg_orders_order_status ........................... [RUN]
+[0m06:23:34  33 of 66 PASS not_null_stg_orders_order_status ................................. [[32mPASS[0m in 0.18s]
+[0m06:23:34  34 of 66 START test not_null_stg_products_product_id ........................... [RUN]
+[0m06:23:35  34 of 66 PASS not_null_stg_products_product_id ................................. [[32mPASS[0m in 0.56s]
+[0m06:23:35  35 of 66 START test not_null_stg_sellers_seller_city ........................... [RUN]
+[0m06:23:35  35 of 66 PASS not_null_stg_sellers_seller_city ................................. [[32mPASS[0m in 0.13s]
+[0m06:23:35  36 of 66 START test not_null_stg_sellers_seller_id ............................. [RUN]
+[0m06:23:36  36 of 66 PASS not_null_stg_sellers_seller_id ................................... [[32mPASS[0m in 0.47s]
+[0m06:23:36  37 of 66 START test not_null_stg_sellers_seller_state .......................... [RUN]
+[0m06:23:36  37 of 66 PASS not_null_stg_sellers_seller_state ................................ [[32mPASS[0m in 0.15s]
+[0m06:23:36  38 of 66 START test not_null_stg_sellers_seller_zip_code_prefix ................ [RUN]
+[0m06:23:36  38 of 66 PASS not_null_stg_sellers_seller_zip_code_prefix ...................... [[32mPASS[0m in 0.15s]
+[0m06:23:36  39 of 66 START test test_coordinates_within_brazil ............................. [RUN]
+[0m06:23:36  39 of 66 PASS test_coordinates_within_brazil ................................... [[32mPASS[0m in 0.15s]
+[0m06:23:36  40 of 66 START test test_delivered_orders_have_delivery_date ................... [RUN]
+[0m06:23:36  40 of 66 FAIL 8 test_delivered_orders_have_delivery_date ....................... [[31mFAIL 8[0m in 0.30s]
+[0m06:23:36  41 of 66 START test test_foreign_key_customer_id ............................... [RUN]
+[0m06:23:37  41 of 66 PASS test_foreign_key_customer_id ..................................... [[32mPASS[0m in 0.18s]
+[0m06:23:37  42 of 66 START test test_foreign_key_order_items_order_id ...................... [RUN]
+[0m06:23:37  42 of 66 PASS test_foreign_key_order_items_order_id ............................ [[32mPASS[0m in 0.17s]
+[0m06:23:37  43 of 66 START test test_foreign_key_payments_order_id ......................... [RUN]
+[0m06:23:37  43 of 66 PASS test_foreign_key_payments_order_id ............................... [[32mPASS[0m in 0.13s]
+[0m06:23:37  44 of 66 START test test_foreign_key_product_id ................................ [RUN]
+[0m06:23:37  44 of 66 PASS test_foreign_key_product_id ...................................... [[32mPASS[0m in 0.17s]
+[0m06:23:37  45 of 66 START test test_foreign_key_reviews_order_id .......................... [RUN]
+[0m06:23:37  45 of 66 PASS test_foreign_key_reviews_order_id ................................ [[32mPASS[0m in 0.13s]
+[0m06:23:37  46 of 66 START test test_foreign_key_seller_id ................................. [RUN]
+[0m06:23:37  46 of 66 PASS test_foreign_key_seller_id ....................................... [[32mPASS[0m in 0.15s]
+[0m06:23:37  47 of 66 START test test_geolocation_coordinates_valid ......................... [RUN]
+[0m06:23:38  47 of 66 PASS test_geolocation_coordinates_valid ............................... [[32mPASS[0m in 0.26s]
+[0m06:23:38  48 of 66 START test test_no_duplicate_order_items .............................. [RUN]
+[0m06:23:38  48 of 66 PASS test_no_duplicate_order_items .................................... [[32mPASS[0m in 0.15s]
+[0m06:23:38  49 of 66 START test test_no_future_order_dates ................................. [RUN]
+[0m06:23:38  49 of 66 PASS test_no_future_order_dates ....................................... [[32mPASS[0m in 0.49s]
+[0m06:23:38  50 of 66 START test test_order_status_values ................................... [RUN]
+[0m06:23:38  50 of 66 PASS test_order_status_values ......................................... [[32mPASS[0m in 0.13s]
+[0m06:23:38  51 of 66 START test test_order_timestamps_logical_sequence ..................... [RUN]
+[0m06:23:39  51 of 66 FAIL 1382 test_order_timestamps_logical_sequence ...................... [[31mFAIL 1382[0m in 0.13s]
+[0m06:23:39  52 of 66 START test test_orders_must_have_items ................................ [RUN]
+[0m06:23:39  52 of 66 FAIL 8 test_orders_must_have_items .................................... [[31mFAIL 8[0m in 0.17s]
+[0m06:23:39  53 of 66 START test test_payment_amount_matches_order_total .................... [RUN]
+[0m06:23:39  53 of 66 FAIL 1046 test_payment_amount_matches_order_total ..................... [[31mFAIL 1046[0m in 0.23s]
+[0m06:23:39  54 of 66 START test test_payment_installments_range ............................ [RUN]
+[0m06:23:39  54 of 66 FAIL 2 test_payment_installments_range ................................ [[31mFAIL 2[0m in 0.15s]
+[0m06:23:39  55 of 66 START test test_payment_type_values ................................... [RUN]
+[0m06:23:39  55 of 66 PASS test_payment_type_values ......................................... [[32mPASS[0m in 0.13s]
+[0m06:23:39  56 of 66 START test test_payment_values_non_negative ........................... [RUN]
+[0m06:23:39  56 of 66 PASS test_payment_values_non_negative ................................. [[32mPASS[0m in 0.14s]
+[0m06:23:39  57 of 66 START test test_prices_non_negative ................................... [RUN]
+[0m06:23:40  57 of 66 PASS test_prices_non_negative ......................................... [[32mPASS[0m in 0.12s]
+[0m06:23:40  58 of 66 START test test_product_dimensions_non_negative ....................... [RUN]
+[0m06:23:40  58 of 66 PASS test_product_dimensions_non_negative ............................. [[32mPASS[0m in 0.16s]
+[0m06:23:40  59 of 66 START test test_review_score_values ................................... [RUN]
+[0m06:23:40  59 of 66 PASS test_review_score_values ......................................... [[32mPASS[0m in 0.16s]
+[0m06:23:40  60 of 66 START test test_reviews_after_order_date .............................. [RUN]
+[0m06:23:40  60 of 66 FAIL 74 test_reviews_after_order_date ................................. [[31mFAIL 74[0m in 0.13s]
+[0m06:23:40  61 of 66 START test unique_stg_category_translation_product_category_name ...... [RUN]
+[0m06:23:40  61 of 66 PASS unique_stg_category_translation_product_category_name ............ [[32mPASS[0m in 0.13s]
+[0m06:23:40  62 of 66 START test unique_stg_customers_customer_unique_id .................... [RUN]
+[0m06:23:40  62 of 66 FAIL 2997 unique_stg_customers_customer_unique_id ..................... [[31mFAIL 2997[0m in 0.14s]
+[0m06:23:40  63 of 66 START test unique_stg_order_reviews_review_id ......................... [RUN]
+[0m06:23:40  63 of 66 FAIL 789 unique_stg_order_reviews_review_id ........................... [[31mFAIL 789[0m in 0.14s]
+[0m06:23:40  64 of 66 START test unique_stg_orders_order_id ................................. [RUN]
+[0m06:23:41  64 of 66 PASS unique_stg_orders_order_id ....................................... [[32mPASS[0m in 0.14s]
+[0m06:23:41  65 of 66 START test unique_stg_products_product_id ............................. [RUN]
+[0m06:23:41  65 of 66 PASS unique_stg_products_product_id ................................... [[32mPASS[0m in 0.14s]
+[0m06:23:41  66 of 66 START test unique_stg_sellers_seller_id ............................... [RUN]
+[0m06:23:41  66 of 66 PASS unique_stg_sellers_seller_id ..................................... [[32mPASS[0m in 0.14s]
+[0m06:23:41  
+[0m06:23:41  Finished running 66 data tests in 0 hours 0 minutes and 17.07 seconds (17.07s).
+[0m06:23:41  
+[0m06:23:41  [31mCompleted with 8 errors, 0 partial successes, and 0 warnings:[0m
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test test_delivered_orders_have_delivery_date (tests/test_delivered_orders_have_delivery_date.sql)[0m
+[0m06:23:41    Got 8 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/tests/test_delivered_orders_have_delivery_date.sql
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test test_order_timestamps_logical_sequence (tests/test_order_timestamps_logical_sequence.sql)[0m
+[0m06:23:41    Got 1382 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/tests/test_order_timestamps_logical_sequence.sql
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test test_orders_must_have_items (tests/test_orders_must_have_items.sql)[0m
+[0m06:23:41    Got 8 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/tests/test_orders_must_have_items.sql
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test test_payment_amount_matches_order_total (tests/test_payment_amount_matches_order_total.sql)[0m
+[0m06:23:41    Got 1046 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/tests/test_payment_amount_matches_order_total.sql
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test test_payment_installments_range (tests/test_payment_installments_range.sql)[0m
+[0m06:23:41    Got 2 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/tests/test_payment_installments_range.sql
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test test_reviews_after_order_date (tests/test_reviews_after_order_date.sql)[0m
+[0m06:23:41    Got 74 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/tests/test_reviews_after_order_date.sql
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test unique_stg_customers_customer_unique_id (models/silver/schema.yml)[0m
+[0m06:23:41    Got 2997 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/models/silver/schema.yml/unique_stg_customers_customer_unique_id.sql
+[0m06:23:41  
+[0m06:23:41  [31mFailure in test unique_stg_order_reviews_review_id (models/silver/schema.yml)[0m
+[0m06:23:41    Got 789 results, configured to fail if != 0
+[0m06:23:41  
+[0m06:23:41    compiled code at target/compiled/dbt_Ecommerce_project/models/silver/schema.yml/unique_stg_order_reviews_review_id.sql
+[0m06:23:41  
+[0m06:23:41  Done. PASS=58 WARN=0 ERROR=8 SKIP=0 NO-OP=0 TOTAL=66

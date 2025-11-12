@@ -132,10 +132,9 @@ models:
         tests:
           - not_null
       - name: customer_unique_id
-        description: "Global customer unique ID"
+        description: "Global customer unique ID (note: source data contains duplicates)"
         tests:
           - not_null
-          - unique
       - name: customer_zip_code_prefix
         description: "Customer zip code prefix"
         tests:

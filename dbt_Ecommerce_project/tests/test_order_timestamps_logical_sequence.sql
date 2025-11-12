@@ -2,6 +2,7 @@
 -- Purchase <= Approved <= Carrier <= Delivered
 -- Expectation: This query should return 0 rows
 
+
 SELECT 
     order_id,
     order_purchase_timestamp,
@@ -12,7 +13,7 @@ FROM {{ ref('stg_orders') }}
 WHERE 
     -- Check if approved date is before purchase date
     (order_approved_at IS NOT NULL AND order_approved_at < order_purchase_timestamp)
-    OR
+    OR  
     -- Check if carrier date is before approved date
     (order_delivered_carrier_date IS NOT NULL AND order_approved_at IS NOT NULL 
      AND order_delivered_carrier_date < order_approved_at)
